@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  user-select: none;
+}
+
+@media only screen and (max-aspect-ratio: 9/16) {
+  video {
+    height: 100%;
+    width: unset;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  video {
+    bottom: 0;
+    top: unset;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  video {
+    transform: translateY(-50%);
+    inset: 0;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgrey;
+}
+
+.content-area {
+  position: relative;
+  min-width: 3in;
+  background-color: #FFF3;
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  --border-color: #fad5ff66;
+  --border-width: 7px;
+  border: var(--border-width) solid var(--border-color);
+  --top-height: 40px;
+  border-top: var(--top-height) solid var(--border-color);
+
+  font-size: 2rem;
+}
+
+.content-area:before {
+  content: "";
+  --size: 15px;
+  width: var(--size);
+  height: var(--size);
+  background-color: #f94f74;
+  position: absolute;
+  top: calc(-1 * var(--top-height) / 2);
+  left: var(--border-width);
+  transform: translateY(-50%);
+  border-radius: 50%;
+
+  box-shadow: 
+    calc(var(--size) * 1.5) 0 0 0 #f4b871,
+    calc(var(--size) * 1.5 * 2) 0 0 0 #6eb895;
+}
+
+.photo {
+  --size: 10rem;
+  height: var(--size);
+  width: var(--size);
+  background-color: grey;
+  border-radius: 50%;
+  background-image: url("./imgs/rosiee.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 8px 0 black;
+}
+
+.phone-btn {
+  all: unset;
+  cursor: pointer;
+  background-color: lightgrey;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  width: max-content;
+}
+
+.phone-btn:hover {
+}
+
+.phone-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.phone-info .ig {
+  all: unset;
+  font-size: 0;
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("./imgs/ig.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+
+  transition: transform 0.2s;
+}
+
+.phone-info .ig:hover {
+  transform: scale(1.1);
+}
+
+.phone-info .number-display {
+  width: max-content;
+  text-decoration: none;
+  font-family: monospace;
+}
+
+.readable {
+  text-shadow: 0 0 3px #FFF;
+  font-family: 'Lobster', cursive;
+}
+
+.hidden {
+  display: none;
+}
+
+.layer1 {
+  z-index: 1;
+}
+
+.layer2 {
+  z-index: 2;
+}
+
+.layer3 {
+  z-index: 3;
+}
